@@ -1,0 +1,16 @@
+{
+	"comments": [
+		{
+			"id": 0,
+			"comment": "a"
+		},
+		{
+			"id": 1,
+			"comment": "b"
+		}
+	],
+	"posts": {
+		"firstPostId": "The first post text",
+		"secondPostId": "b"
+	}
+}
