@@ -3,34 +3,19 @@ import React from 'react';
 import TextBlock from './TextBlock';
 import withSubscription from './withSubscription';
 
-class BlogPost extends React.Component {
+const BlogPost = props => {
 
-	/*
-	constructor(props) {
-		super(props);
+	return (
+		<div>
+			<h4>The Blog</h4>
 
-		console.info(JSON.stringify(props, null, '\t'));
-	}
-	*/
+			<p>
+				{props.blogPostAdditionalsData}
+			</p>
 
-	render() {
-		return (
-			<div>
-				<h4>The Blog</h4>
+			<TextBlock text={props}/>
+		</div>
+	);
+};
 
-				<p>
-				{this.props.blogPostAdditionalsData}
-				</p>
-
-				<TextBlock text={this.props}/>
-			</div>
-		);
-	}
-}
-
-export default withSubscription(BlogPost, (DataSource, props) => {
-	//console.info(JSON.stringify(props, null, '\t'));
-	//console.info(JSON.stringify(props.id, null, '\t'));
-
-	return DataSource.getBlogPost(props.id)
-});
+export default withSubscription(BlogPost, (DataSource, props) => DataSource.getBlogPost(props.id));
